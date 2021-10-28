@@ -42,6 +42,7 @@ jobs:
             IMAGE_TAG: ${{ github.sha }}
         run: |
             sudo apt install awscli -y
+            aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 533048344608.dkr.ecr.ap-south-1.amazonaws.com
 
 
       
