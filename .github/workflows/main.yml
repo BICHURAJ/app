@@ -44,8 +44,9 @@ jobs:
             sudo apt install awscli -y
             aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 533048344608.dkr.ecr.ap-south-1.amazonaws.com
             docker build -t test .
-            docker tag test:latest 533048344608.dkr.ecr.ap-south-1.amazonaws.com/test:latest
-            docker push 533048344608.dkr.ecr.ap-south-1.amazonaws.com/test:latest
+            docker run test
+            #docker tag test:latest 533048344608.dkr.ecr.ap-south-1.amazonaws.com/test:latest
+            #docker push 533048344608.dkr.ecr.ap-south-1.amazonaws.com/test:latest
 
       
       
