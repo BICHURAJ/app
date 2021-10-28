@@ -41,7 +41,7 @@ jobs:
             ECR_REPOSITORY: test
             IMAGE_TAG: ${{ github.sha }}
         run: |
-            docker --version
+            sudo apt install aws-cli
 
 
       
