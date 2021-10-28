@@ -41,7 +41,7 @@ jobs:
             ECR_REPOSITORY: test
             IMAGE_TAG: ${{ github.sha }}
         run: |
-            sudo apt install aws-cli
+            sudo apt install awscli -y
 
 
       
