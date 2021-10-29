@@ -8,11 +8,15 @@ phases:
       - aws --version
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 533048344608.dkr.ecr.ap-south-1.amazonaws.com
      
-
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t test .
+      - docker tag test:latest 533048344608.dkr.ecr.ap-south-1.amazonaws.com/test:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker build -t test .
-      - docker tag test:latest 533048344608.dkr.ecr.ap-south-1.amazonaws.com/test:latest
+      - docker push $REPOSITORY_URI:latest
       - docker push 533048344608.dkr.ecr.ap-south-1.amazonaws.com/test:latest
