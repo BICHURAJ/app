@@ -18,5 +18,4 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push $REPOSITORY_URI:latest
       - docker push 533048344608.dkr.ecr.ap-south-1.amazonaws.com/test:latest
