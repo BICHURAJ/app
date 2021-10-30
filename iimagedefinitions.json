@@ -1,0 +1,6 @@
+[
+    {
+        "name": "flask-container",
+        "imageuri":"533048344608.dkr.ecr.ap-south-1.amazonaws.com/test:latest"
+    }
+]
